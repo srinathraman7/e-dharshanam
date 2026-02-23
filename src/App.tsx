@@ -10,6 +10,8 @@ import TempleDetails from "./pages/TempleDetails";
 import Confirmation from "./pages/Confirmation";
 import TatkalBooking from "./pages/TatkalBooking";
 import InQueueOrder from "./pages/InQueueOrder";
+import MyOrders from "./pages/MyOrders";
+import HelpSupport from "./pages/HelpSupport";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/tatkal" element={<TatkalBooking />} />
           <Route path="/in-queue" element={<InQueueOrder />} />
+          <Route path="/orders" element={<MyOrders />} />
+          <Route path="/help" element={<HelpSupport />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

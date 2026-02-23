@@ -149,6 +149,35 @@ const InQueueOrder = () => {
                 ))}
               </div>
 
+              {/* Forgotten Items Message Box */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ ...springTransition, delay: 0.1 }}
+                className="rounded-2xl p-5 border-2 border-dashed"
+                style={{ borderColor: "hsl(43, 35%, 63%)", background: "hsl(35, 100%, 95%, 0.5)" }}
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🙏</span>
+                  <div className="flex-1">
+                    <h3 className="font-serif font-semibold text-sm mb-1">Bringing Forgotten Things to Dharshanam</h3>
+                    <p className="text-xs text-muted-foreground mb-3">Forgot something essential? Describe what you need and we'll arrange it for you.</p>
+                    <textarea
+                      placeholder="Describe the item(s) you forgot (e.g., 'Extra coconut and red cloth for special puja')"
+                      className="w-full px-3 py-2 rounded-xl bg-card border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                      rows={2}
+                    />
+                    <button
+                      onClick={() => toast.success("Request submitted! We'll arrange your items. 🙏")}
+                      className="mt-2 btn-gold text-xs px-4 py-2 flex items-center gap-1.5"
+                    >
+                      <Package className="w-3.5 h-3.5" />
+                      Submit to Dharshanam
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+
               {/* Items Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {filteredItems.map((item, index) => {
